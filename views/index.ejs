@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>academic-details</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script> -->
+
+
+    <!-- angularjs link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="javascripts/controllers.js"></script>
+    <script src="javascripts/config.js"></script>
+
+
+</head>
+<style>
+    .charan {
+        height: 42px;
+    }
+
+    div.sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+
+    }
+</style>
+
+<body ng-app="myapp" ng-controller="myCtrl">
+    <!-- <div class="cherry">
+        <div class="row"> -->
+    <div class="container col-sm-12"
+        style="height: 1200px;border:groove; box-shadow: 10px 10px 10px 10px; padding-right:  180px;padding-bottom: 50px; padding-top: 10px;background-color: #D3C2F3;background-image: url(images/love.png);background-repeat:no-repeat;">
+        <div class="sticky">
+            <ul class="nav nav-tabs">
+                <li><a href=" #" data-toggle="tab" style="font-size:x-large;font-weight: bold;color: black;">Easy
+                        Prep</a></li>
+                <li class="active"><a href="#Ourteam" data-toggle="tab">About Me</a></li>
+                <li><a href="#OurObjective" data-toggle="tab">Academic details</a></li>
+                <li><a href="#Squad" data-toggle="tab">Tech skills</a></li>
+                <li><a href="#master" data-toggle="tab">Personal Skills</a></li>
+                <li><a href="#preview" data-toggle="tab">Preview</a></li>
+                <li><a href="#output" data-toggle="tab">Result</a></li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div id="Ourteam" class="tab-pane fade active in ">
+
+                <h1>HOME PAGE</h1>
+                <!-- <div class="container col-sm-2" style="height:400px;margin-top: 30px;padding-left: 30px;">
+                            <img style="image-orientation: 60deg;" src="images/animation.png">
+                        </div> -->
+                <!-- <div ng-view></div> -->
+                <br>
+                <div class=" container col-sm-6 col-sm-offset-4"
+                    style="border-radius: 25px;background-color:#DBDBDB;border-style: groove; border-bottom-left-radius: 25px;border-bottom-right-radius: 25px;margin-top: -21px; box-shadow: 2px 4px 2px 2px grey;">
+
+
+                    <div style="background-color: #1ab4f0;margin-top: -20px;height: 50px;">
+                        <center>
+                            <legend>
+                                <h2>About Me</h2>
+                            </legend>
+                        </center>
+                    </div>
+
+
+                    <form ng-submit="send(user)" name="myFormula" class="form-horizontal" style="margin-top: 10px;">
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Email:<span
+                                    class="glyphicon glyphicon-envelope"></span></label>
+                            <div class="col-sm-8">
+                                <input type="email" name="myInputs" class="form-control charan"
+                                    placeholder="Enter email" ng-model="user.email" required>
+                                <span style="color: rgb(153, 70, 70); "
+                                    ng-show="myFormula.myInputs.$touched && myFormula.myInputs.$invalid">
+                                    enter a
+                                    valid email
+                                </span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 ">Name<span
+                                    class="glyphicon glyphicon-user"></span></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control charan" name="username" placeholder="Enter name"
+                                    ng-model="user.firstName" required>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Laname<span
+                                    class="glyphicon glyphicon-user"></span></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control charan" name="lastname"
+                                    placeholder="Enter lastname" ng-model="user.lastname" required>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3" for="pwd">Gender<span
+                                    class="glyphicon glyphicon-ruble"></span></label>
+                            <div class="col-sm-8">
+                                <select ng-model="user.Gender" class="form-control selectpicker charan">
+                                    <option value="">Select your Gender</option>
+                                    <option>MALE</option>
+                                    <option>FEMALE</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">DATE:<span
+                                    class="glyphicon glyphicon-calendar"></span>
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="date" class="form-control charan" ng-model="user.date" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">phNum:<span
+                                    class="glyphicon glyphicon-phone-alt"></span></label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control charan" placeholder="Enter phonenumber"
+                                    ng-model="user.phonenumber">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3" for="pwd">City<span
+                                    class="glyphicon glyphicon-map-marker"></span></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control charan" placeholder="Enter Cityname"
+                                    ng-model="user.cityname">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3" for="pwd">State</label>
+                            <div class="col-sm-8">
+                                <select ng-model="user.state" class="form-control selectpicker charan">
+                                    <option value="">Select your State</option>
+                                    <option>AndhraPradesh</option>
+                                    <option>Telangana</option>
+                                    <option>Maharastra</option>
+                                    <option>bihar</option>
+                                    <option>kerala</option>
+                                    <option>karnataka</option>
+                                    <option>TamilNadu</option>
+                                    <option>orrissa</option>
+                                    <option>MadhyaPradesh</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10" style="padding-left: 388px;">
+                                <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div id="OurObjective" class="tab-pane fade  ">
+                <h1>objectives</h1>
+
+                <div class="container col-sm-6 col-sm-offset-4"
+                    style="border-radius: 25px;background-color:#DBDBDB;border-style: groove; border-bottom-left-radius: 25px;border-bottom-right-radius: 25px;margin-top: -20px;; box-shadow: 2px 4px 2px 2px grey;">
+
+                    <div style="background-color: #E7B44B;margin-top: -20px;height: 50px;">
+                        <center>
+                            <legend>
+                                <h2>Academic Background</h2>
+                            </legend>
+                        </center>
+                    </div>
+
+
+
+                    <form name="myForm" class="form-horizontal" ng-submit="go(obj)">
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 ">School<span
+                                    class="glyphicon glyphicon-user"></span></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control charan" name="schoolname"
+                                    placeholder="Enter name" ng-model="obj.schoolname" required>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">passout year<span
+                                    class="glyphicon glyphicon-user"></span></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control charan" name="passyear" placeholder="Enter year"
+                                    ng-model="obj.Passyear" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">percentage<span
+                                    class="glyphicon glyphicon-user"></span></label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control charan" name="percent"
+                                    placeholder="Enter percentage" ng-model="obj.sclPercent" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 ">Intermediate<span
+                                    class="glyphicon glyphicon-user"></span></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control charan" name="intername"
+                                    placeholder="Enter College name" ng-model="obj.intername" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">passoutyear<span
+                                    class="glyphicon glyphicon-user"></span></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control charan" name="interpassyear"
+                                    placeholder="Enter year" ng-model="obj.interPassyear" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3"><strong>percentage</strong><span
+                                    class="glyphicon glyphicon-user"></span></label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control charan" name="interpercent"
+                                    placeholder="Enter percentage" ng-model="obj.interPercent" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 ">Engineering<span
+                                    class="glyphicon glyphicon-user"></span></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control charan" name="engi"
+                                    placeholder="Enter College name" ng-model="obj.enginame" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Stream</label>
+                            <div class="col-sm-8">
+                                <select ng-model="obj.stream" class="form-control selectpicker charan">
+                                    <option value="">Select your stream</option>
+                                    <option>Btech</option>
+                                    <option>Mtech</option>
+                                    <option>MBA</option>
+                                    <option>MCA</option>
+                                    <option>degree</option>
+                                    <option>MCTC</option>
+                                    <option>MCR</option>
+                                    <option>Mayor's Office</option>
+                                    <option>Tourism Office</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">State</label>
+                            <div class="col-sm-8">
+                                <select ng-model="obj.department" class="form-control selectpicker charan">
+                                    <option value="">Select your Department</option>
+                                    <option>computer Science</option>
+                                    <option>Information technology</option>
+                                    <option>electronics and communictaion</option>
+                                    <option>Electrical and ekectronics</option>
+                                    <option>MPDC</option>
+                                    <option>MCTC</option>
+                                    <option>MCR</option>
+                                    <option>Mayor's Office</option>
+                                    <option>Tourism Office</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">passoutyear<span
+                                    class="glyphicon glyphicon-user"></span></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control charan" name="propassyear"
+                                    placeholder="Enter year" ng-model="obj.engiPassyear" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3"><strong>CGPA</strong><span
+                                    class="glyphicon glyphicon-user"></span></label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control charan" name="propercent"
+                                    placeholder="Enter CGPA" ng-model="obj.engiPercent" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 ">Name<span
+                                    class="glyphicon glyphicon-user"></span></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control charan" name="username" placeholder="Enter name"
+                                    ng-model="obj.lastname" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10" style="padding-left: 388px;">
+                                <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+
+            <div id="Squad" class="tab-pane fade ">
+                <h1>squad</h1>
+
+                <div class="container col-sm-6 col-sm-offset-4"
+                    style="border-radius: 25px;background-color:#DBDBDB;border-style: groove; border-radius:25px;margin-top: 20px; box-shadow: 2px 4px 2px 2px grey;">
+                    <form name="myForm" class="form-horizontal" ng-submit="went(det)">
+
+
+                        <div style="background-color: rosybrown;margin-top: -20px;height: 50px;">
+                            <center>
+                                <legend>
+                                    <h2>Technical skills</h2>
+                                </legend>
+                            </center>
+                        </div>
+
+
+
+                        <div style="margin-top: 25px;">
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2 ">Name<span
+                                        class="glyphicon glyphicon-user"></span></label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control charan" name="username"
+                                        placeholder="Enter name" ng-model="det.lastname" required>
+                                </div>
+                            </div>
+
+                            <div class="main" style="height: 30px;">
+                                <h4>Computer Languages<span ng-click="char=true" ng-hide="char" style="float: right;"
+                                        class="glyphicon glyphicon-plus"></span><span ng-click="char=false"
+                                        ng-hide="!char" style="float: right;" class="glyphicon glyphicon-minus"></span>
+                                </h4>
+
+                            </div>
+                            <div class="content" style="margin-top:10px;margin-bottom:30px;">
+                                <center>
+                                    <legend>
+                                        <h4 style="font-family:courier;font-weight:50px;font-size: 30px;">
+                                            Pick your languages!</h4>
+                                    </legend>
+                                </center>
+                                <input type="radio" ng-model="det.cplus" value="C_plusplus">
+                                <label style="font-size:25px">c++</label>
+                                &nbsp;
+                                <input ng-disabled="!det.cplus" type="number" placeholder="out of 100%"
+                                    ng-model="det.cplusvalue">
+                                &nbsp; &nbsp; &nbsp;
+                                <input type="radio" ng-model="det.c" value="C">
+                                <label style="font-size:25px">c</label>
+                                &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+                                <input ng-disabled="!det.c" type="number" placeholder="out of 100%"
+                                    ng-model="det.cvalue">
+                                <br>
+                                <input type="radio" ng-model="det.java" value="Java">
+                                <label style="font-size:25px">java</label>
+                                <input ng-disabled="!det.java" type="number" placeholder="out of 100%"
+                                    ng-model="det.javalue">
+                                &nbsp; &nbsp;&nbsp;
+                                <input type="radio" ng-model="det.python" value="Python">
+                                <label style="font-size:25px">python</label>
+                                <input ng-disabled="!det.python" type="number" placeholder="out of 100%"
+                                    ng-model="det.pyvalue">
+                                <br>
+                                <input type="radio" ng-model="det.csha" value="C#">
+                                <label style="font-size:25px">c#</label>
+                                &nbsp; &nbsp;&nbsp;
+                                <input ng-disabled="!det.csha" type="number" placeholder="out of 100%"
+                                    ng-model="det.cshavalue">
+                                &nbsp; &nbsp;&nbsp;&nbsp;
+                                <input type="radio" ng-model="det.rpro" value="R_programming">
+                                <label style="font-size:25px">R-pro</label>
+                                &nbsp; &nbsp;
+                                <input ng-disabled="!det.rpro" type="number" placeholder="out of 100%"
+                                    ng-model="det.rvalue">
+                            </div>
+
+                            <div style="height: 30px;" class="main1">
+                                <h4>other-technologies<span ng-click="var=true" ng-hide="var" style="float: right;"
+                                        class="glyphicon glyphicon-plus"></span><span ng-click="var=false"
+                                        ng-hide="!var" style="float: right;" class="glyphicon glyphicon-minus"></span>
+                                </h4>
+                            </div>
+                            <div class="content1">
+                                <center>
+                                    <legend>
+                                        <h4 style="font-family:courier;font-weight:50px;font-size: 30px;">
+                                            Pick your expertise domains!</h4>
+                                    </legend>
+                                </center>
+
+                                <input ng-model="det.mean" type="radio" value="MeanStack">
+                                <label style="font-size:20px">Mean-stack</label>
+                                <textarea ng-disabled="!det.mean" class="form-control" type="text" rows="2" cols="80"
+                                    placeholder="write-something!" ng-model=" det.meandesc"></textarea>
+
+                                <input ng-model="det.iot" type="radio" value="IOT">
+                                <label style="font-size:20px">IOT</label>
+                                <textarea class="form-control" ng-disabled="!det.iot" type="text" rows="2" cols="80"
+                                    placeholder="write-something!" ng-model="   det.iotdesc"></textarea>
+
+
+                                <input ng-model="det.ml" type="radio" value="MachineLearning">
+                                <label style="font-size:20px">Machine_learning</label>
+                                <textarea class="form-control" ng-disabled="!det.ml" type="text" rows="2" cols="80"
+                                    placeholder="write-something!" ng-model=" mldesc"></textarea>
+
+
+                                <input ng-model="det.ai" type="radio" value="Artificial_Intelligence">
+                                <label style="font-size:20px">Artificial-intelligence</label>
+                                <textarea class="form-control" ng-disabled="!det.ai" type="text" rows="2" cols="80"
+                                    placeholder="write-something!" ng-model=" det.aidesc"></textarea>
+
+                            </div>
+
+                            <div style="height: 30px;" class="main2">
+                                <h4>Career-Objective<span style="float: right;" class="glyphicon glyphicon-plus"></span>
+                                </h4>
+
+                            </div>
+
+                            <div class="content2">
+                                <input type="checkbox" ng-model="det.CO">
+                                <label>Want to mention your Carrer objective <span
+                                        class="glyphicon glyphicon-question-sign"></span></label>
+                                <textarea ng-disabled="!CO" rows="2" cols="80" ng-model="det.COdesc"></textarea>
+
+                            </div>
+
+                            <div style="height: 30px;">
+                                <h4>Languages<span style="float: right;" class="glyphicon glyphicon-plus"></span></h4>
+
+                            </div>
+
+                            <div style="height: 30px;">
+                                <h4>Languages<span style="float: right;" class="glyphicon glyphicon-plus"></span></h4>
+
+                            </div>
+
+
+                        </div>
+                        <div style="float: right;">
+                            <input class=" btn btn-primary btn-md" type="submit">
+                        </div>
+                    </form>
+                </div>
+
+
+
+            </div>
+
+            <div id="master" class="tab-pane fade ">
+                <h1>squad</h1>
+
+
+                <div class="container col-sm-6 col-sm-offset-4"
+                    style="border-radius: 25px;background-color:#DBDBDB;border-style: groove; border-bottom-left-radius: 25px;border-bottom-right-radius: 25px;margin-top: -21px; box-shadow: 2px 4px 2px 2px grey;">
+
+                    <div style="background-color: #E7B44B;margin-top: -20px;height: 50px;">
+                        <center>
+                            <legend>
+                                <h2>Personal skills</h2>
+                            </legend>
+                        </center>
+                    </div>
+
+                    <form ng-submit="gone(dat)" name="myForm" class="form-horizontal" style="margin-top: 10px;">
+
+
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 ">Name<span
+                                    class="glyphicon glyphicon-user"></span></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control charan" placeholder="Enter name"
+                                    ng-model="dat.lastname" required>
+                            </div>
+                        </div>
+
+                        <h3 style="float: left;">
+                            Pick your Personal skills !
+                        </h3>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div>
+                            <div class="form-group">
+                                <div class="col-sm-1 col-sm-offset-2">
+                                    <input type="radio" class="form-control charan" value="Good listner"
+                                        ng-model="dat.perskil1" required>
+                                </div>
+                                <label class="control-label col-sm-5  " style="font-size:large;">Good
+                                    listner<span class="glyphicon glyphicon-user"></span></label>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-1 col-sm-offset-2">
+                                    <input type="radio" class="form-control charan" value="Quick
+                                            learner" ng-model="dat.perskil2" required>
+                                </div>
+                                <label class="control-label col-sm-5  " style="font-size:large;">Quick
+                                    learner<span class="glyphicon glyphicon-user"></span></label>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-1 col-sm-offset-2">
+                                    <input type="radio" class="form-control charan" value="Analytical"
+                                        ng-model="dat.perskil3" required>
+                                </div>
+                                <label class="control-label col-sm-5 " style="font-size:large;">Analytical<span
+                                        class="glyphicon glyphicon-user"></span></label>
+                            </div>
+                            <div>
+                                <div class="form-group">
+                                    <div class="col-sm-1 col-sm-offset-2">
+                                        <input type="radio" class="form-control charan" value="Strong Work
+                                                Ethics" ng-model="dat.perskil4" required>
+                                    </div>
+                                    <label class="control-label col-sm-5  " style="font-size:large;">Strong Work
+                                        Ethics<span class="glyphicon glyphicon-user"></span></label>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-1 col-sm-offset-2">
+                                        <input type="radio" class="form-control charan" value="Exellent
+                                                Verbal grip" ng-model="dat.perskil5" required>
+                                    </div>
+                                    <label class="control-label col-sm-5  " style="font-size:large;">Exellent
+                                        Verbal grip<span class="glyphicon glyphicon-user"></span></label>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-1 col-sm-offset-2">
+                                        <input type="radio" class="form-control charan" value="Good
+                                                conversation and Comunication " ng-model="dat.perskil6" required>
+                                    </div>
+                                    <label class="control-label col-sm-5  " style="font-size:large;">Good
+                                        conversation and Comunication <span
+                                            class="glyphicon glyphicon-user"></span></label>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3 ">Other<span
+                                            class="glyphicon glyphicon-user"></span></label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control charan" placeholder="Enter name"
+                                            ng-model="dat.otherperskil">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 style="float: left;">
+                                    Add your Hobbies !
+                                </h3>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3 ">Name<span
+                                            class="glyphicon glyphicon-user"></span></label>
+                                    <div class="col-sm-8">
+                                        <textarea type="text" rows="2" cols="80" class="form-control charan"
+                                            name="username" placeholder="Enter name" ng-model="dat.hobbies"
+                                            required></textarea>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div>
+                                <h3 style="float: left;">
+                                    Add your Languages !
+                                </h3>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="form-group">
+                                    <div class="col-sm-1 col-sm-offset-2">
+                                        <input type="radio" class="form-control charan" value="English"
+                                            ng-model="dat.lang1" required>
+                                    </div>
+                                    <label class="control-label col-sm-1 " style="font-size:large;">english</label>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-1 col-sm-offset-2">
+                                        <input type="radio" class="form-control charan" value="Hindi"
+                                            ng-model="dat.lang2" required>
+                                    </div>
+                                    <label class="control-label col-sm-1  " style="font-size:large;">Hindi</label>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="col-sm-1 col-sm-offset-2">
+                                        <input type="radio" class="form-control charan" value="Telugu"
+                                            ng-model="dat.lang3" required>
+                                    </div>
+                                    <label class="control-label col-sm-1 " style="font-size:large;">telugu</label>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div style="float: right;">
+                            <input class=" btn btn-primary btn-md" type="submit">
+                        </div>
+                    </form>
+                    <button class="btn btn-success btn-md"><a href="result">GET</a></button>
+                </div>
+
+
+
+            </div>
+
+            <div id="preview" class="tab-pane fade ">
+                <center>
+                    <h1>PreView</h1>
+                </center>
+
+
+                <div>
+                    <table class="table">
+
+                        <tr ng-repeat="member in Astore">
+                            <td ng-hide="userhide">{{ $index + 1 | number }}</td>
+                            <td>
+                                <p ng-hide="userhide">{{ member.firstName }}</p>
+                                <input type="text" ng-show="userhide" ng-model="member.firstName" />
+                            </td>
+                            <td>
+                                <p ng-hide="userhide">{{ member.lastname }}</p>
+                                <input type="text" ng-show="userhide" ng-model="member.lastname" />
+                            </td>
+
+                            <td>
+                                <p ng-hide="userhide">{{ member.email }}</p>
+                                <input type="text" ng-show="userhide" ng-model="member.email" />
+                            </td>
+
+                            <td>
+                                <p ng-hide="userhide">{{ member.phonenumber }}</p>
+                                <input type="text" ng-show="userhide" ng-model="member.phonenumber" />
+                            </td>
+
+                            <td>
+                                <p ng-hide="userhide">{{ member.cityname }}</p>
+                                <input type="text" ng-show="userhide" ng-model="member.cityname" />
+                            </td>
+
+                            <td>
+                                <p ng-hide="userhide">{{ member.Gender }}</p>
+                                <input type="text" ng-show="userhide" ng-model="member.Gender" />
+                            </td>
+
+                            <td>
+                                <p ng-hide="userhide">{{ member.state }}</p>
+                                <input type="text" ng-show="userhide" ng-model="member.state" />
+                            </td>
+
+                            <td>
+                                <button ng-hide="userhide" ng-click="userhide=true">EDIT</button>
+                            </td>
+                            <td>
+                                <button ng-show="userhide" ng-click="userhide=false;update(member)">
+                                    update
+                                </button>
+                            </td>
+                            <td>
+                                <button class="Aconfirm" value={{member.lastname}}>confirm!</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <table class="table">
+
+                        <tr ng-repeat="member in Bstore">
+                            <td ng-hide="usehide">{{ $index + 1 | number }}</td>
+                            <td>
+                                <p ng-hide="usehide">{{ member.schoolname }}</p>
+                                <input type="text" ng-show="usehide" ng-model="member.schoolname" />
+                            </td>
+                            <td>
+                                <p ng-hide="usehide">{{ member.Passyear }}</p>
+                                <input type="text" ng-show="usehide" ng-model="member.Passyear" />
+                            </td>
+
+                            <td>
+                                <p ng-hide="usehide">{{ member.sclPercent }}</p>
+                                <input type="text" ng-show="usehide" ng-model="member.sclPercent" />
+                            </td>
+
+                            <td>
+                                <p ng-hide="usehide">{{ member.intername }}</p>
+                                <input type="text" ng-show="usehide" ng-model="member.intername" />
+                            </td>
+
+                            <td>
+                                <p ng-hide="usehide">{{ member.interPercent }}</p>
+                                <input type="text" ng-show="usehide" ng-model="member.interPercent" />
+                            </td>
+
+                            <td>
+                                <p ng-hide="usehide">{{ member.enginame }}</p>
+                                <input type="text" ng-show="usehide" ng-model="member.enginame" />
+                            </td>
+
+                            <td>
+                                <p ng-hide="usehide">{{ member.stream }}</p>
+                                <input type="text" ng-show="usehide" ng-model="member.stream" />
+                            </td>
+
+                            <td>
+                                <p ng-hide="usehide">{{ member.department }}</p>
+                                <input type="text" ng-show="usehide" ng-model="member.department" />
+                            </td>
+
+                            <td>
+                                <p ng-hide="usehide">{{ member.engiPassyear }}</p>
+                                <input type="text" ng-show="usehide" ng-model="member.engiPassyear" />
+                            </td>
+
+                            <td>
+                                <p ng-hide="usehide">{{ member.engiPercent }}</p>
+                                <input type="text" ng-show="usehide" ng-model="member.engiPercent" />
+                            </td>
+
+                            <td>
+                                <p ng-hide="usehide">{{ member.lastname }}</p>
+                                <input type="text" ng-show="usehide" ng-model="member.lastname" />
+                            </td>
+
+
+                            <td>
+                                <button ng-hide="usehide" ng-click="usehide=true">EDIT</button>
+                            </td>
+                            <td>
+                                <button ng-show="usehide" ng-click="usehide=false;update(member)">
+                                    update
+                                </button>
+                            </td>
+                            <td>
+                                <button class="Bconfirm" value={{member.lastname}}>confirm!</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="output" class="tab-pane fade ">
+                <center>
+                    <h1>RESUME</h1>
+                </center>
+                <div class=" container col-sm-6 col-sm-offset-4">
+
+                    <center>
+                        <legend>
+                            <h2>About Me</h2>
+                        </legend>
+                    </center>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $(".content").hide();
+            $(".main").click(function () {
+                $(".content").slideToggle(500);
+            });
+
+            $(".content1").hide();
+            $(".main1").click(function () {
+                $(".content1").slideToggle(700);
+            });
+
+            $(".content2").hide();
+            $(".main2").click(function () {
+                $(".content2").slideToggle(500);
+            });
+        });
+
+        $(document).ready(function () {
+            var Aqoute = [];
+            $('.table').on('click', '.Aconfirm', function () {
+                alert("success");
+                var id = $(this).val();
+                alert(id);
+                $.post('/getAdata', { a: id }, function (data) {
+                    alert(data);
+                    Aqoute.push(data);
+                    console.log(Aqoute)
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            var Bqoute = [];
+            $('.table').on('click', '.Bconfirm', function () {
+                alert("success");
+                var id = $(this).val();
+                alert(id);
+                $.post('/getBdata', { b: id }, function (data) {
+                    alert(data);
+                    Bqoute.push(data);
+                    console.log(Bqoute)
+                });
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
