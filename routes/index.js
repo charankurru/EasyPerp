@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var monk = require('monk');
 //var db = monk('URI  || localhost:27017/easyprep');
+MONGODB_URI =
+  'mongodb+srv://charan:bharathi@cluster0-2hbtz.mongodb.net/easyPrep?retryWrites=true&w=majority';
 var db = monk(
   process.env.MONGODB_URI ||
     'mongodb+srv://charan:bharathi@cluster0-2hbtz.mongodb.net/easyPrep?retryWrites=true&w=majority'
