@@ -3,7 +3,8 @@ var router = express.Router();
 var monk = require('monk');
 //var db = monk('URI  || localhost:27017/easyprep');
 var db = monk(
-  'mongodb+srv://charan:bharathi@cluster0-2hbtz.mongodb.net/test?retryWrites=true&w=majority'
+  process.env.MONGODB_URI ||
+    'mongodb+srv://charan:bharathi@cluster0-2hbtz.mongodb.net/test?retryWrites=true&w=majority'
 );
 var perdet = db.get('personalDetails');
 var acadet = db.get('AcademicDetails');
