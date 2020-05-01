@@ -397,120 +397,127 @@
                             </h4>
 
                         </div>
-                        <div class="content" style="margin-top:10px;margin-bottom:30px;">
+                        <div class="content row " style="margin-top:10px;margin-bottom:30px;">
                             <center>
                                 <legend>
                                     <h4 style="font-family:courier;font-weight:50px;font-size: 30px;">
                                         Pick your languages!</h4>
                                 </legend>
                             </center>
-                            <input type="radio" ng-model="det.cplus" value="C_plusplus">
-                            <label style="font-size:25px">c++</label>
-                            &nbsp;
-                            <input ng-disabled="!det.cplus" type="number" placeholder="out of 100%"
-                                ng-model="det.cplusvalue">
-                            &nbsp; &nbsp; &nbsp;
-                            <input type="radio" ng-model="det.c" value="C">
-                            <label style="font-size:25px">c</label>
-                            &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
-                            <input ng-disabled="!det.c" type="number" placeholder="out of 100%" ng-model="det.cvalue">
-                            <br>
-                            <input type="radio" ng-model="det.java" value="Java">
-                            <label style="font-size:25px">java</label>
-                            <input ng-disabled="!det.java" type="number" placeholder="out of 100%"
-                                ng-model="det.javalue">
-                            &nbsp; &nbsp;&nbsp;
-                            <input type="radio" ng-model="det.python" value="Python">
-                            <label style="font-size:25px">python</label>
-                            <input ng-disabled="!det.python" type="number" placeholder="out of 100%"
-                                ng-model="det.pyvalue">
-                            <br>
-                            <input type="radio" ng-model="det.csha" value="C#">
-                            <label style="font-size:25px">c#</label>
-                            &nbsp; &nbsp;&nbsp;
-                            <input ng-disabled="!det.csha" type="number" placeholder="out of 100%"
-                                ng-model="det.cshavalue">
-                            &nbsp; &nbsp;&nbsp;&nbsp;
-                            <input type="radio" ng-model="det.rpro" value="R_programming">
-                            <label style="font-size:25px">R-pro</label>
-                            &nbsp; &nbsp;
-                            <input ng-disabled="!det.rpro" type="number" placeholder="out of 100%"
-                                ng-model="det.rvalue">
+                            <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                                <input type="radio" ng-model="det.cplus" value="C_plusplus">
+                                <label style="font-size:25px">c++</label>
+                                &nbsp;
+                                <input ng-disabled="!det.cplus" type="number" placeholder="out of 100%"
+                                    ng-model="det.cplusvalue">
+                            </div>
+
+                            <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                                <input type="radio" ng-model="det.c" value="C">
+                                <label style="font-size:25px">c</label>
+                                <input ng-disabled="!det.c" type="number" placeholder="out of 100%"
+                                    ng-model="det.cvalue">
+                            </div>
+                            <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                                <input type="radio" ng-model="det.java" value="Java">
+                                <label style="font-size:25px">java</label>
+                                <input ng-disabled="!det.java" type="number" placeholder="out of 100%"
+                                    ng-model="det.javalue">
+                            </div>
+                            <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                                <input type="radio" ng-model="det.python" value="Python">
+                                <label style="font-size:25px">python</label>
+                                <input ng-disabled="!det.python" type="number" placeholder="out of 100%"
+                                    ng-model="det.pyvalue">
+                            </div>
+                            <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                                <input type="radio" ng-model="det.csha" value="C#">
+                                <label style="font-size:25px">c#</label>
+                                &nbsp; &nbsp;&nbsp;
+                                <input ng-disabled="!det.csha" type="number" placeholder="out of 100%"
+                                    ng-model="det.cshavalue">
+                            </div>
+
+                            <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                                <input type="radio" ng-model="det.rpro" value="R_programming">
+                                <label style="font-size:25px">R-pro</label>
+                                &nbsp; &nbsp;
+                                <input ng-disabled="!det.rpro" type="number" placeholder="out of 100%"
+                                    ng-model="det.rvalue">
+                            </div>
                         </div>
+                    </div>
 
-                        <div style="height: 30px;" class="main1">
-                            <h4>other-technologies<span ng-click="var=true" ng-hide="var" style="float: right;"
-                                    class="glyphicon glyphicon-plus"></span><span ng-click="var=false" ng-hide="!var"
-                                    style="float: right;" class="glyphicon glyphicon-minus"></span>
-                            </h4>
-                        </div>
-                        <div class="content1">
-                            <center>
-                                <legend>
-                                    <h4 style="font-family:courier;font-weight:50px;font-size: 30px;">
-                                        Pick your expertise domains!</h4>
-                                </legend>
-                            </center>
+                    <div style="height: 30px;" class="main1">
+                        <h4>other-technologies<span ng-click="var=true" ng-hide="var" style="float: right;"
+                                class="glyphicon glyphicon-plus"></span><span ng-click="var=false" ng-hide="!var"
+                                style="float: right;" class="glyphicon glyphicon-minus"></span>
+                        </h4>
+                    </div>
+                    <div class="content1">
+                        <center>
+                            <legend>
+                                <h4 style="font-family:courier;font-weight:50px;font-size: 30px;">
+                                    Pick your expertise domains!</h4>
+                            </legend>
+                        </center>
 
-                            <input ng-model="det.mean" type="radio" value="MeanStack">
-                            <label style="font-size:20px">Mean-stack</label>
-                            <textarea ng-disabled="!det.mean" class="form-control" type="text" rows="2" cols="80"
-                                placeholder="write-something!" ng-model=" det.meandesc"></textarea>
+                        <input ng-model="det.mean" type="radio" value="MeanStack">
+                        <label style="font-size:20px">Mean-stack</label>
+                        <textarea ng-disabled="!det.mean" class="form-control" type="text" rows="2" cols="80"
+                            placeholder="write-something!" ng-model=" det.meandesc"></textarea>
 
-                            <input ng-model="det.iot" type="radio" value="IOT">
-                            <label style="font-size:20px">IOT</label>
-                            <textarea class="form-control" ng-disabled="!det.iot" type="text" rows="2" cols="80"
-                                placeholder="write-something!" ng-model="   det.iotdesc"></textarea>
-
-
-                            <input ng-model="det.ml" type="radio" value="MachineLearning">
-                            <label style="font-size:20px">Machine_learning</label>
-                            <textarea class="form-control" ng-disabled="!det.ml" type="text" rows="2" cols="80"
-                                placeholder="write-something!" ng-model=" mldesc"></textarea>
+                        <input ng-model="det.iot" type="radio" value="IOT">
+                        <label style="font-size:20px">IOT</label>
+                        <textarea class="form-control" ng-disabled="!det.iot" type="text" rows="2" cols="80"
+                            placeholder="write-something!" ng-model="   det.iotdesc"></textarea>
 
 
-                            <input ng-model="det.ai" type="radio" value="Artificial_Intelligence">
-                            <label style="font-size:20px">Artificial-intelligence</label>
-                            <textarea class="form-control" ng-disabled="!det.ai" type="text" rows="2" cols="80"
-                                placeholder="write-something!" ng-model=" det.aidesc"></textarea>
+                        <input ng-model="det.ml" type="radio" value="MachineLearning">
+                        <label style="font-size:20px">Machine_learning</label>
+                        <textarea class="form-control" ng-disabled="!det.ml" type="text" rows="2" cols="80"
+                            placeholder="write-something!" ng-model=" mldesc"></textarea>
 
-                        </div>
 
-                        <div style="height: 30px;" class="main2">
-                            <h4>Career-Objective<span style="float: right;" class="glyphicon glyphicon-plus"></span>
-                            </h4>
-
-                        </div>
-
-                        <div class="content2">
-                            <input type="checkbox" ng-model="det.CO">
-                            <label>Want to mention your Carrer objective <span
-                                    class="glyphicon glyphicon-question-sign"></span></label>
-                            <textarea class="form-control" ng-disabled="!CO" rows="2" cols="80"
-                                ng-model="det.COdesc"></textarea>
-
-                        </div>
-
-                        <div style="height: 30px;">
-                            <h4>Languages<span style="float: right;" class="glyphicon glyphicon-plus"></span></h4>
-
-                        </div>
-
-                        <div style="height: 30px;">
-                            <h4>Languages<span style="float: right;" class="glyphicon glyphicon-plus"></span></h4>
-
-                        </div>
-
+                        <input ng-model="det.ai" type="radio" value="Artificial_Intelligence">
+                        <label style="font-size:20px">Artificial-intelligence</label>
+                        <textarea class="form-control" ng-disabled="!det.ai" type="text" rows="2" cols="80"
+                            placeholder="write-something!" ng-model=" det.aidesc"></textarea>
 
                     </div>
+
+                    <div style="height: 30px;" class="main2">
+                        <h4>Career-Objective<span style="float: right;" class="glyphicon glyphicon-plus"></span>
+                        </h4>
+
+                    </div>
+
+                    <div class="content2">
+                        <input type="checkbox" ng-model="det.CO">
+                        <label>Want to mention your Carrer objective <span
+                                class="glyphicon glyphicon-question-sign"></span></label>
+                        <textarea class="form-control" ng-disabled="!CO" rows="2" cols="80"
+                            ng-model="det.COdesc"></textarea>
+
+                    </div>
+
+                    <div style="height: 30px;">
+                        <h4>Languages<span style="float: right;" class="glyphicon glyphicon-plus"></span></h4>
+
+                    </div>
+
+                    <div style="height: 30px;">
+                        <h4>Languages<span style="float: right;" class="glyphicon glyphicon-plus"></span></h4>
+
+                    </div>
+
                     <div style="float: right;">
                         <input class=" btn btn-primary btn-md" type="submit">
                     </div>
                 </form>
+
+
             </div>
-
-
-
         </div>
 
         <div id="master" class="tab-pane fade ">
