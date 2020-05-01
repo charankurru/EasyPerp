@@ -63,8 +63,6 @@
     </div>
     <div class="tab-content">
         <div id="Ourteam" class="tab-pane fade active in ">
-
-            <h1>charan-loves-ypuo </h1>
             <!-- <div class="container col-sm-2" style="height:400px;margin-top: 30px;padding-left: 30px;">
                             <img style="image-orientation: 60deg;" src="images/animation.png">
                         </div> -->
@@ -72,8 +70,8 @@
             <br>
             <div class="container-fluid">
                 <div class="row">
-                    <div class=" container  col-sm-12 col-sm-offset-4 col-md-4"
-                        style="border-radius: 25px;background-color:#DBDBDB;border-style: groove; border-bottom-left-radius: 25px;border-bottom-right-radius: 25px;margin-top: -21px; box-shadow: 2px 4px 2px 2px grey;">
+                    <div class=" container  col-sm-12 col-sm-offset-3 col-md-5"
+                        style=" margin-top:30px;border-radius: 25px;background-color:#DBDBDB;border-style: groove; border-bottom-left-radius: 25px;border-bottom-right-radius: 25px; box-shadow: 2px 4px 2px 2px grey;">
 
 
                         <div style="background-color: #1ab4f0;margin-top: -20px;height: 50px;">
@@ -190,7 +188,7 @@
                             </div>
 
                             <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10" style="padding-left: 388px;">
+                                <div class="col-sm-offset-2 col-sm-10">
                                     <button type="submit" class="btn btn-primary btn-md">Submit</button>
                                 </div>
                             </div>
@@ -201,23 +199,22 @@
 
         </div>
 
-        <div id="OurObjective" class="tab-pane fade  ">
-            <h1>objectives</h1>
+        <div id="OurObjective" class="tab-pane fade ">
 
-            <div class="container col-sm-6 col-sm-offset-4"
-                style="border-radius: 25px;background-color:#DBDBDB;border-style: groove; border-bottom-left-radius: 25px;border-bottom-right-radius: 25px;margin-top: -20px;; box-shadow: 2px 4px 2px 2px grey;">
+            <div class="container col-sm-12 col-sm-offset-3 col-md-5"
+                style="margin-top:30px;border-radius: 25px;background-color:#DBDBDB;border-style: groove; border-bottom-left-radius: 25px;border-bottom-right-radius: 25px; box-shadow: 2px 4px 2px 2px grey;">
 
                 <div style="background-color: #E7B44B;margin-top: -20px;height: 50px;">
                     <center>
                         <legend>
-                            <h2>Academic Background</h2>
+                            <h3>Academic Background</h3>
                         </legend>
                     </center>
                 </div>
 
 
 
-                <form name="myForm" class="form-horizontal" ng-submit="go(obj)">
+                <form name="myForm" class="form-horizontal" ng-submit="go(obj)" style="margin-top: 20px;">
 
                     <div class="form-group">
                         <label class="control-label col-sm-3 ">School<span
@@ -355,7 +352,7 @@
 
 
                     <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10" style="padding-left: 388px;">
+                        <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="btn btn-primary btn-md">Submit</button>
                         </div>
                     </div>
@@ -366,10 +363,9 @@
         </div>
 
         <div id="Squad" class="tab-pane fade ">
-            <h1>squad</h1>
 
-            <div class="container col-sm-6 col-sm-offset-4"
-                style="border-radius: 25px;background-color:#DBDBDB;border-style: groove; border-radius:25px;margin-top: 20px; box-shadow: 2px 4px 2px 2px grey;">
+            <div class="container col-sm-12 col-md-offset-3 col-md-5"
+                style=" margin-top:30px;border-radius: 25px;background-color:#DBDBDB;border-style: groove; border-radius:25px;margin-top: 20px; box-shadow: 2px 4px 2px 2px grey;">
                 <form name="myForm" class="form-horizontal" ng-submit="went(det)">
 
 
@@ -490,7 +486,8 @@
                             <input type="checkbox" ng-model="det.CO">
                             <label>Want to mention your Carrer objective <span
                                     class="glyphicon glyphicon-question-sign"></span></label>
-                            <textarea ng-disabled="!CO" rows="2" cols="80" ng-model="det.COdesc"></textarea>
+                            <textarea class="form-control" ng-disabled="!CO" rows="2" cols="80"
+                                ng-model="det.COdesc"></textarea>
 
                         </div>
 
@@ -517,11 +514,9 @@
         </div>
 
         <div id="master" class="tab-pane fade ">
-            <h1>squad</h1>
 
-
-            <div class="container col-sm-6 col-sm-offset-4"
-                style="border-radius: 25px;background-color:#DBDBDB;border-style: groove; border-bottom-left-radius: 25px;border-bottom-right-radius: 25px;margin-top: -21px; box-shadow: 2px 4px 2px 2px grey;">
+            <div class="container col-sm-12 col-md-offset-3 col-md-5"
+                style="  margin-top:30px;border-radius: 25px;background-color:#DBDBDB;border-style: groove; border-bottom-left-radius: 25px;border-bottom-right-radius: 25px; box-shadow: 2px 4px 2px 2px grey;">
 
                 <div style="background-color: #E7B44B;margin-top: -20px;height: 50px;">
                     <center>
@@ -553,17 +548,17 @@
                     <br>
                     <div>
                         <div class="form-group">
-                            <div class="col-sm-1 col-sm-offset-2">
-                                <input type="radio" class="form-control charan" value="Good listner"
-                                    ng-model="dat.perskil1" required>
+                            <div class=" col-xs-2 col-sm-1 col-sm-offset-2">
+                                <input type="radio" class="form-control" value="Good listner" ng-model="dat.perskil1"
+                                    required>
                             </div>
                             <label class="control-label col-sm-5  " style="font-size:large;">Good
                                 listner<span class="glyphicon glyphicon-user"></span></label>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-sm-1 col-sm-offset-2">
-                                <input type="radio" class="form-control charan" value="Quick
+                            <div class=" col-xs-2 col-sm-1 col-sm-offset-2">
+                                <input type="radio" class="form-control " value="Quick
                                             learner" ng-model="dat.perskil2" required>
                             </div>
                             <label class="control-label col-sm-5  " style="font-size:large;">Quick
@@ -571,7 +566,7 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-sm-1 col-sm-offset-2">
+                            <div class=" col-xs-2 col-sm-1 col-sm-offset-2">
                                 <input type="radio" class="form-control charan" value="Analytical"
                                     ng-model="dat.perskil3" required>
                             </div>
@@ -580,8 +575,8 @@
                         </div>
                         <div>
                             <div class="form-group">
-                                <div class="col-sm-1 col-sm-offset-2">
-                                    <input type="radio" class="form-control charan" value="Strong Work
+                                <div class=" col-xs-2 col-sm-1 col-sm-offset-2">
+                                    <input type="radio" class="form-control " value="Strong Work
                                                 Ethics" ng-model="dat.perskil4" required>
                                 </div>
                                 <label class="control-label col-sm-5  " style="font-size:large;">Strong Work
@@ -589,8 +584,8 @@
                             </div>
 
                             <div class="form-group">
-                                <div class="col-sm-1 col-sm-offset-2">
-                                    <input type="radio" class="form-control charan" value="Exellent
+                                <div class=" col-xs-2 col-sm-1 col-sm-offset-2">
+                                    <input type="radio" class="form-control " value="Exellent
                                                 Verbal grip" ng-model="dat.perskil5" required>
                                 </div>
                                 <label class="control-label col-sm-5  " style="font-size:large;">Exellent
@@ -598,11 +593,11 @@
                             </div>
 
                             <div class="form-group">
-                                <div class="col-sm-1 col-sm-offset-2">
-                                    <input type="radio" class="form-control charan" value="Good
+                                <div class=" col-xs-2 col-sm-1 col-sm-offset-2">
+                                    <input type="radio" class="form-control " value="Good
                                                 conversation and Comunication " ng-model="dat.perskil6" required>
                                 </div>
-                                <label class="control-label col-sm-5  " style="font-size:large;">Good
+                                <label class="control-label col-sm-5 col-xs-6 " style="font-size:large;">Good
                                     conversation and Comunication <span class="glyphicon glyphicon-user"></span></label>
 
                             </div>
@@ -611,7 +606,7 @@
                                 <label class="control-label col-sm-3 ">Other<span
                                         class="glyphicon glyphicon-user"></span></label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control charan" placeholder="Enter name"
+                                    <input type="text" class="form-control " placeholder="Enter name"
                                         ng-model="dat.otherperskil">
                                 </div>
                             </div>
@@ -629,7 +624,7 @@
                                 <label class="control-label col-sm-3 ">Name<span
                                         class="glyphicon glyphicon-user"></span></label>
                                 <div class="col-sm-8">
-                                    <textarea type="text" rows="2" cols="80" class="form-control charan" name="username"
+                                    <textarea type="text" rows="2" cols="80" class="form-control " name="username"
                                         placeholder="Enter name" ng-model="dat.hobbies" required></textarea>
                                 </div>
                             </div>
@@ -645,16 +640,16 @@
                             <br>
                             <br>
                             <div class="form-group">
-                                <div class="col-sm-1 col-sm-offset-2">
-                                    <input type="radio" class="form-control charan" value="English" ng-model="dat.lang1"
+                                <div class=" col-xs-2 col-sm-1 col-sm-offset-2">
+                                    <input type="radio" class="form-control " value="English" ng-model="dat.lang1"
                                         required>
                                 </div>
                                 <label class="control-label col-sm-1 " style="font-size:large;">english</label>
                             </div>
 
                             <div class="form-group">
-                                <div class="col-sm-1 col-sm-offset-2">
-                                    <input type="radio" class="form-control charan" value="Hindi" ng-model="dat.lang2"
+                                <div class=" col-xs-2 col-sm-1 col-sm-offset-2">
+                                    <input type="radio" class="form-control " value="Hindi" ng-model="dat.lang2"
                                         required>
                                 </div>
                                 <label class="control-label col-sm-1  " style="font-size:large;">Hindi</label>
@@ -662,8 +657,8 @@
 
 
                             <div class="form-group">
-                                <div class="col-sm-1 col-sm-offset-2">
-                                    <input type="radio" class="form-control charan" value="Telugu" ng-model="dat.lang3"
+                                <div class=" col-xs-2 col-sm-1 col-sm-offset-2">
+                                    <input type="radio" class="form-control" value="Telugu" ng-model="dat.lang3"
                                         required>
                                 </div>
                                 <label class="control-label col-sm-1 " style="font-size:large;">telugu</label>
@@ -683,62 +678,83 @@
 
         </div>
 
-        <div id="preview" class="tab-pane fade container col-md-6 col-sm-3">
+        <section id="preview" class="tab-pane fade container col-xs-6 col-md-8  col-sm-6">
             <center>
                 <h1>PreView</h1>
             </center>
 
 
-            <div>
-                <table class="table">
+            <div class="row">
+                <table>
 
                     <tr ng-repeat="member in Astore">
-                        <td ng-hide="userhide">{{ $index + 1 | number }}</td>
-                        <td>
-                            <p ng-hide="userhide">{{ member.firstName }}</p>
-                            <input type="text" ng-show="userhide" ng-model="member.firstName" />
-                        </td>
-                        <td>
-                            <p ng-hide="userhide">{{ member.lastname }}</p>
-                            <input type="text" ng-show="userhide" ng-model="member.lastname" />
-                        </td>
+                        <td ng-hide="userhide" class=" col-xs-2 col-sm-3 col-md-1">{{ $index + 1 | number }}</td>
+                        <div class="col-sm-3 col-md-1 col-xs-2">
+                            <td>
+                                <p ng-hide="userhide">{{ member.firstName }}</p>
+                                <input type="text" ng-show="userhide" ng-model="member.firstName" />
+                            </td>
+                        </div>
 
-                        <td>
-                            <p ng-hide="userhide">{{ member.email }}</p>
-                            <input type="text" ng-show="userhide" ng-model="member.email" />
-                        </td>
+                        <div class="col-sm-3 col-md-1 col-xs-2">
+                            <td class="col-sm-3 col-md-1 col-xs-2">
+                                <p ng-hide="userhide">{{ member.lastname }}</p>
+                                <input type="text" ng-show="userhide" ng-model="member.lastname" />
+                            </td>
+                        </div>
 
-                        <td>
-                            <p ng-hide="userhide">{{ member.phonenumber }}</p>
-                            <input type="text" ng-show="userhide" ng-model="member.phonenumber" />
-                        </td>
+                        <div class="col-sm-3 col-md-1 col-xs-2">
+                            <td class="col-sm-3 col-md-1 col-xs-2">
+                                <p ng-hide="userhide">{{ member.email }}</p>
+                                <input type="text" ng-show="userhide" ng-model="member.email" />
+                            </td>
+                        </div>
 
-                        <td>
-                            <p ng-hide="userhide">{{ member.cityname }}</p>
-                            <input type="text" ng-show="userhide" ng-model="member.cityname" />
-                        </td>
+                        <div class="col-sm-3 col-md-1 col-xs-2">
+                            <td class="col-sm-3 col-md-1 col-xs-2">
+                                <p ng-hide="userhide">{{ member.phonenumber }}</p>
+                                <input type="text" ng-show="userhide" ng-model="member.phonenumber" />
+                            </td>
+                        </div>
 
-                        <td>
-                            <p ng-hide="userhide">{{ member.Gender }}</p>
-                            <input type="text" ng-show="userhide" ng-model="member.Gender" />
-                        </td>
+                        <div class="col-sm-3 col-md-1 col-xs-2">
+                            <td class="col-sm-3 col-md-1 col-xs-2">
+                                <p ng-hide="userhide">{{ member.cityname }}</p>
+                                <input type="text" ng-show="userhide" ng-model="member.cityname" />
+                            </td>
+                        </div>
 
-                        <td>
-                            <p ng-hide="userhide">{{ member.state }}</p>
-                            <input type="text" ng-show="userhide" ng-model="member.state" />
-                        </td>
+                        <div class="col-sm-3 col-md-1 col-xs-2">
+                            <td class="col-sm-3 col-md-1 col-xs-2">
+                                <p ng-hide="userhide">{{ member.Gender }}</p>
+                                <input type="text" ng-show="userhide" ng-model="member.Gender" />
+                            </td>
+                        </div>
 
-                        <td>
-                            <button ng-hide="userhide" ng-click="userhide=true">EDIT</button>
-                        </td>
-                        <td>
-                            <button ng-show="userhide" ng-click="userhide=false;update(member)">
-                                update
-                            </button>
-                        </td>
-                        <td>
-                            <button class="Aconfirm" value={{member.lastname}}>confirm!</button>
-                        </td>
+                        <div class="col-sm-3 col-md-1 col-xs-2">
+                            <td class="col-sm-3 col-md-1 col-xs-2">
+                                <p ng-hide="userhide">{{ member.state }}</p>
+                                <input type="text" ng-show="userhide" ng-model="member.state" />
+                            </td>
+                        </div>
+
+                        <div class="col-sm-3 col-md-1 col-xs-2">
+                            <td class="col-sm-3 col-md-1 col-xs-2">
+                                <button ng-hide="userhide" ng-click="userhide=true">EDIT</button>
+                            </td>
+                        </div>
+                        <div class="col-sm-3 col-md-1 col-xs-2">
+                            <td class="col-sm-3 col-md-1 col-xs-2">
+                                <button ng-show="userhide" ng-click="userhide=false;update(member)">
+                                    update
+                                </button>
+                            </td>
+                        </div>
+                        <div class="col-sm-3 col-md-1 col-xs-2">
+                            <td class="col-sm-3 col-md-1 col-xs-2">
+                                <button class="Aconfirm" value={{member.lastname}}>confirm!</button>
+                            </td>
+                        </div>
                     </tr>
                 </table>
             </div>
@@ -817,7 +833,7 @@
                     </tr>
                 </table>
             </div>
-        </div>
+        </section>
 
         <div id="output" class="tab-pane fade ">
             <center>
