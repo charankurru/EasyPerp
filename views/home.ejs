@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Easy Prep</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .image {
+        height: 400px;
+        width: 280px;
+    }
+
+    .immage {
+        height: 400px;
+        width: 320px;
+
+    }
+</style>
+
+<body>
+
+    <!--      adding nav bar-->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #003D74;color:white;font-size:20px;">
+        <a style=" color: white; font-weight: 600 ;font-size:35px; font-family: cursive;" class="navbar-brand"
+            href="#">Easy Prep</a>
+        <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+            aria-label="Toggle navigation" style="border-color: white">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active" style="padding-left: 20px;">
+                    <a style=" color: white" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item" style="padding-left: 20px;">
+                    <a style=" color: white" class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item dropdown" style="padding-left: 20px; float:right;">
+                    <a style=" color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Login
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"
+                        style="width: 400px;opacity: 0.99">
+                        <!--
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+-->
+                        <form method="POST" action="/login">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Username:</label>
+                                <input type="text" class="form-control" name="Username" aria-describedby="emailHelp">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                    anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" name="password">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+
+                    </div>
+                </li>
+                <li class="nav-item dropdown" style="padding-left: 20px; float:right;">
+                    <a style=" color: white" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sign Up
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"
+                        style="width: 400px;opacity: 0.99">
+                        <!--
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+-->
+                        <form method="POST" action="/signup">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Username:</label>
+                                <input type="text" class="form-control" name="Username" aria-describedby="emailHelp">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                    anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" name="password">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container col-lg-12 col-xs-12"
+        style="background-image: url(images/pos1.jpg);height: 350px;background-repeat: no-repeat;background-size: cover; border-style: groove;border-radius: 25px;">
+        <div class="form-group">
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div style="padding-top: 60px; text-align: center;color: white;">
+                    <h1>Easy Prep</h1>
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container col-lg-12 col-xs-12">
+        <div class="form-group">
+            <center>
+                <legend>
+                    <h1 style="color: #003D74;">
+                        Why Easy Prep?</h1>
+                </legend>
+            </center>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-sm-offset-2 " style="padding-top: 100px;">
+                <h1>Attractive design !</h1>
+                <h4 style="color: gray;">
+                    Go beyond downloadable resume templates that never seem to work. Pick a design you like, focus on
+                    the content, and let Zety take care of the rest. Our resume wizard will guide you through the
+                    process with helpful tips and examples. Building a resume with Zety is as simple as online
+                    shopping—just click an item you like and put in on your resume.
+                </h4>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-lg-offset-2">
+                <img class="image" src="images/resume-templates-two-column-2@3x.png">
+            </div>
+            <br>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-lg-offset-2">
+                <img class="immage" src="images/second.jpg">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 ">
+                <h1>Ease to Use!</h1>
+                <h4 style="color: gray">
+                    Each resume format template is designed to draw attention to your assets. Highlight your career
+                    summary to hook the employer. Use icons to save valuable space. Pick a single or two column design
+                    to balance whitespace and wordcount. Show your mastery of skills by using graphs. Fit two pages on
+                    one.
+                </h4>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

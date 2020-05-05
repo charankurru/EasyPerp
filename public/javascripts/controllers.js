@@ -1,5 +1,5 @@
 var app = angular.module('myapp', []);
-app.controller('myCtrl', function(
+app.controller('myCtrl', function (
   $scope,
   postdata,
   posdata,
@@ -20,54 +20,54 @@ app.controller('myCtrl', function(
   $scope.Dstore = [];
 
   $scope.user = { firstName: 'John', lastname: 'Doe' };
-  $scope.send = function(val) {
+  $scope.send = function (val) {
     $scope.Astore.push(val);
     postdata.postingdata(val);
     //insertdata.postingdata(val);
     $scope.user = {}; // calling the post function
   };
 
-  $scope.go = function(val) {
+  $scope.go = function (val) {
     $scope.Bstore.push(val);
     posdata.postingdata(val);
     $scope.obj = {}; // calling the post function
   };
 
-  $scope.went = function(val) {
+  $scope.went = function (val) {
     $scope.Cstore.push(val);
     podata.postingdata(val);
     $scope.det = {}; // calling the post function
   };
 
-  $scope.gone = function(val) {
+  $scope.gone = function (val) {
     $scope.Dstore.push(val);
     pdata.postingdata(val);
     $scope.dat = {}; // calling the post function
   };
 
   // editing the data
-  $scope.update = function(val) {
+  $scope.update = function (val) {
     editdata.editingdata(val);
   };
 });
 //--_______________________________________________________________________________________________________________________________________--
 
-app.service('postdata', function($http) {
+app.service('postdata', function ($http) {
   return {
-    postingdata: function(value) {
+    postingdata: function (value) {
       $http({
         method: 'post',
         url: '/postdata',
-        data: value
+        data: value,
       }).then(
-        function(success) {
+        function (success) {
           console.log(success);
         },
-        function(error) {
+        function (error) {
           console.log(error);
         }
       );
-    }
+    },
   };
 });
 
@@ -90,97 +90,97 @@ app.service('postdata', function($http) {
 //   };
 // });
 
-app.service('postdata', function($http) {
+app.service('postdata', function ($http) {
   return {
-    postingdata: function(value) {
+    postingdata: function (value) {
       $http({
         method: 'post',
         url: '/postdata',
-        data: value
+        data: value,
       }).then(
-        function(success) {
+        function (success) {
           console.log(success);
         },
-        function(error) {
+        function (error) {
           console.log(error);
         }
       );
-    }
+    },
   };
 });
 
-app.service('posdata', function($http) {
+app.service('posdata', function ($http) {
   return {
-    postingdata: function(value) {
+    postingdata: function (value) {
       $http({
         method: 'post',
         url: '/posdata',
-        data: value
+        data: value,
       }).then(
-        function(success) {
+        function (success) {
           console.log(success);
         },
-        function(error) {
+        function (error) {
           console.log(error);
         }
       );
-    }
+    },
   };
 });
 
-app.service('podata', function($http) {
+app.service('podata', function ($http) {
   return {
-    postingdata: function(value) {
+    postingdata: function (value) {
       $http({
         method: 'post',
         url: '/podata',
-        data: value
+        data: value,
       }).then(
-        function(success) {
+        function (success) {
           console.log(success);
         },
-        function(error) {
+        function (error) {
           console.log(error);
         }
       );
-    }
+    },
   };
 });
 
-app.service('pdata', function($http) {
+app.service('pdata', function ($http) {
   return {
-    postingdata: function(value) {
+    postingdata: function (value) {
       $http({
         method: 'post',
         url: '/pdata',
-        data: value
+        data: value,
       }).then(
-        function(success) {
+        function (success) {
           console.log(success);
         },
-        function(error) {
+        function (error) {
           console.log(error);
         }
       );
-    }
+    },
   };
 });
 
-app.service('editdata', function($http) {
+app.service('editdata', function ($http) {
   return {
-    editingdata: function(value) {
+    editingdata: function (value) {
       $http({
         method: 'post',
         url: '/edit',
-        data: value
-      }).then(function(success) {
+        data: value,
+      }).then(function (success) {
         console.log(success);
         alert('successfully_updates');
       }),
-        function(error) {
+        function (error) {
           console.log(error);
           alert(error.data);
         };
-    }
+    },
   };
 });

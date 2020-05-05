@@ -1,19 +1,25 @@
 var express = require('express');
+
 var router = express.Router();
 var monk = require('monk');
-//var db = monk('localhost:27017/easyprep');
-var db = monk(
-  process.env.MONGODB_URL ||
-    'mongodb+srv://charan:bharathi@cluster0-2hbtz.mongodb.net/easyPrep?retryWrites=true&w=majority'
-);
+var db = monk('localhost:27017/easyprep');
+// var db = monk(
+//   process.env.MONGODB_URL ||
+//     'mongodb+srv://charan:bharathi@cluster0-2hbtz.mongodb.net/easyPrep?retryWrites=true&w=majority'
+// );
 var perdet = db.get('personalDetails');
 var acadet = db.get('AcademicDetails');
 var perskill = db.get('personlSkill');
 var techdet = db.get('techicalSkills');
+var session = db.get('login&sign');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('home', { title: 'Express' });
+});
+
+router.get('/forms', function (req, res, next) {
+  res.render('index');
 });
 //________________________________________________________________________________________________________________________
 /*posting the data form all forms into respective collections*/
@@ -101,9 +107,53 @@ router.post('/edit', function (req, res) {
     err,
     docs
   ) {
-    res.send(docs);
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(docs);
+    }
   });
-  0.628;
 });
 //____________________________________________________________________________________________________________________
+
+// sign up
+router.post('/signup', function (req, res, nxt) {
+  session.insert(req.body, function (err, docs) {
+    if (err) {
+      console.log('err');
+    } else {
+      console.log(docs);
+      res.redirect('/');
+    }
+  });
+});
+
+//login
+router.post('/login', function (req, res) {
+  var uname = req.body.Username;
+  var pws = req.body.password;
+  session.findOne({ Username: uname, password: pws }, function (err, docs) {
+    if (!docs) {
+      res.render('home', { error: 'invalid credentials' });
+    } else if (docs) {
+      delete docs.password;
+      req.session.usable = docs; // we have assigned docs to an object called usable
+      console.log(req.session.usable);
+      res.redirect('/forms');
+    } else {
+      console.log(err);
+    }
+  });
+});
+
+// after authentication getting form pages
+// router.get('/forms', function (req, res, next) {
+//   if (req.session && req.session.usable) {
+//     res.locals.usable = req.session.usable;
+//     res.redirect('/forms');
+//   } else {
+//     req.session.reset();
+//     res.redirect('/');
+//   }
+// });
 module.exports = router;

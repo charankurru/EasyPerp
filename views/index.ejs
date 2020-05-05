@@ -691,11 +691,11 @@
             </center>
 
 
-            <div class="row">
-                <table>
+            <div>
+                <table class="table">
 
                     <tr ng-repeat="member in Astore">
-                        <td ng-hide="userhide" class=" col-xs-2 col-sm-3 col-md-1">{{ $index + 1 | number }}</td>
+                        <td ng-hide="userhide">{{ $index + 1 | number }}</td>
                         <div class="col-sm-3 col-md-1 col-xs-2">
                             <td>
                                 <p ng-hide="userhide">{{ member.firstName }}</p>
@@ -704,64 +704,64 @@
                         </div>
 
                         <div class="col-sm-3 col-md-1 col-xs-2">
-                            <td class="col-sm-3 col-md-1 col-xs-2">
+                            <td>
                                 <p ng-hide="userhide">{{ member.lastname }}</p>
                                 <input type="text" ng-show="userhide" ng-model="member.lastname" />
                             </td>
                         </div>
 
                         <div class="col-sm-3 col-md-1 col-xs-2">
-                            <td class="col-sm-3 col-md-1 col-xs-2">
+                            <td>
                                 <p ng-hide="userhide">{{ member.email }}</p>
                                 <input type="text" ng-show="userhide" ng-model="member.email" />
                             </td>
                         </div>
 
                         <div class="col-sm-3 col-md-1 col-xs-2">
-                            <td class="col-sm-3 col-md-1 col-xs-2">
+                            <td>
                                 <p ng-hide="userhide">{{ member.phonenumber }}</p>
                                 <input type="text" ng-show="userhide" ng-model="member.phonenumber" />
                             </td>
                         </div>
 
                         <div class="col-sm-3 col-md-1 col-xs-2">
-                            <td class="col-sm-3 col-md-1 col-xs-2">
+                            <td>
                                 <p ng-hide="userhide">{{ member.cityname }}</p>
                                 <input type="text" ng-show="userhide" ng-model="member.cityname" />
                             </td>
                         </div>
 
                         <div class="col-sm-3 col-md-1 col-xs-2">
-                            <td class="col-sm-3 col-md-1 col-xs-2">
+                            <td>
                                 <p ng-hide="userhide">{{ member.Gender }}</p>
                                 <input type="text" ng-show="userhide" ng-model="member.Gender" />
                             </td>
                         </div>
 
                         <div class="col-sm-3 col-md-1 col-xs-2">
-                            <td class="col-sm-3 col-md-1 col-xs-2">
+                            <td>
                                 <p ng-hide="userhide">{{ member.state }}</p>
                                 <input type="text" ng-show="userhide" ng-model="member.state" />
                             </td>
                         </div>
 
                         <div class="col-sm-3 col-md-1 col-xs-2">
-                            <td class="col-sm-3 col-md-1 col-xs-2">
+                            <td>
                                 <button ng-hide="userhide" ng-click="userhide=true">EDIT</button>
                             </td>
                         </div>
                         <div class="col-sm-3 col-md-1 col-xs-2">
-                            <td class="col-sm-3 col-md-1 col-xs-2">
+                            <td>
                                 <button ng-show="userhide" ng-click="userhide=false;update(member)">
                                     update
                                 </button>
                             </td>
                         </div>
-                        <div class="col-sm-3 col-md-1 col-xs-2">
-                            <td class="col-sm-3 col-md-1 col-xs-2">
-                                <button class="Aconfirm" value={{member.lastname}}>confirm!</button>
-                            </td>
-                        </div>
+
+                        <td>
+                            <button class="Aconfirm" value={{member.lastname}}>confirm!</button>
+                        </td>
+
                     </tr>
                 </table>
             </div>
