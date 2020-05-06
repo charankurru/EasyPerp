@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PrintPage2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#btnPrint').click(function () {
+                $('#btnPrint').hide();
+                var css = '@page { size: a4; }',
+                    head = document.head || document.getElementsByTagName('head')[0],
+                    style = document.createElement('style');
+                style.type = 'text/css';
+                style.media = 'print';
+                if (style.styleSheet) {
+                    style.styleSheet.cssText = css;
+                } else {
+                    style.appendChild(document.createTextNode(css));
+                }
+                head.appendChild(style);
+                window.print();
+            });
+        })
+    </script>
+    <style media="print" type="text/css">
+        .content h1 {
+            color: black ! important;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: white ! important;
+        }
+
+        h4 {
+            color: gainsboro ! important;
+        }
+
+        body {
+            -webkit-print-color-adjust: exact !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" style="border-style:ridge;">
+
+        <div class="form-group">
+
+            <div class="col-xs-5 col-sm-6 col-md-6 col-lg-3"
+                style="background-color: #255A88 !important;color: white;height: 100%">
+
+                <h1 style="color: white ! important">
+                    <%=  project[0].lastname %>
+                </h1>
+                <!--        personla info-->
+                <p style="color: gainsboro ! important;">Developer</p>
+                <h4>Viaskhapatanam</h4>
+                <h4>kurrucharan987@gmail.com</h4>
+                <h4 style="border-bottom: groove; padding-bottom: 15px;">9849214811</h4>
+                <!--        personal skills-->
+                <h2>Skills </h2>
+                <h4>Analytical skills</h4>
+                <h4>communication skills</h4>
+                <h4>converstaion skills</h4>
+                <h4>Animation skills</h4>
+                <h4 style="border-bottom: groove; padding-bottom: 15px;">hardworking skills</h4>
+
+                <h3>Technical Profencies</h3>
+                <label>
+                    <h4>c++</h4>
+                </label>
+                <div class="progress " style="background-color: white ! important">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated"
+                        style="width:40%;background-color: #8AB4F8 ! important;"></div>
+                </div>
+                <label>
+                    <h4>c++</h4>
+                </label>
+                <div class="progress " style="background-color: white ! important">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated"
+                        style="width:40%;background-color: #8AB4F8 ! important;"></div>
+                </div>
+
+                <label>
+                    <h4>c++</h4>
+                </label>
+                <div class="progress " style="background-color: white ! important">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated"
+                        style="width:40%;background-color: #8AB4F8 ! important;"></div>
+                </div>
+
+                <label>
+                    <h4>c++</h4>
+                </label>
+                <div class="progress " style="background-color: white ! important">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated"
+                        style="width:40%;background-color: #8AB4F8 ! important;"></div>
+                </div>
+                <section style="border-bottom: groove; padding-bottom: 15px;"></section>
+
+                <h3>Software Technology's</h3>
+                <h4>Artificaial Intelligence</h4>
+                <h4>Machine Learning</h4>
+                <h4>Meanstack</h4>
+                <h4 style="border-bottom: groove; padding-bottom: 15px;">Iot</h4>
+                <h3>Languages</h3>
+                <h4>English</h4>
+                <h4>Telugu</h4>
+
+            </div>
+            <div class="col-xs-7 col-sm-6 col-md-6 col-lg-9 content" style="background-color: aqua ! important;">
+                <h1>Academic Details:</h1>
+            </div>
+
+            <div class="col-xs-7 col-sm-6 col-md-6 col-lg-9 content" style="background-color: pink ! important;">
+                <h1>Project Works:</h1>
+            </div>
+            <div class="col-xs-7 col-sm-6 col-md-6 col-lg-9 content" style="background-color: red! important;">
+                <h1>Certifications</h1>
+            </div>
+
+        </div>
+    </div>
+
+    <button type="button" id="btnPrint" class="btn btn-primary pull-right">Print</button>
+
+</body>
+
+</html>

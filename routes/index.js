@@ -2,11 +2,11 @@ var express = require('express');
 
 var router = express.Router();
 var monk = require('monk');
-//var db = monk('localhost:27017/easyprep');
-var db = monk(
-  process.env.MONGODB_URL ||
-    'mongodb+srv://charan:bharathi@cluster0-2hbtz.mongodb.net/easyPrep?retryWrites=true&w=majority'
-);
+var db = monk('localhost:27017/easyprep');
+// var db = monk(
+//   process.env.MONGODB_URL ||
+//     'mongodb+srv://charan:bharathi@cluster0-2hbtz.mongodb.net/easyPrep?retryWrites=true&w=majority'
+// );
 var perdet = db.get('personalDetails');
 var acadet = db.get('AcademicDetails');
 var perskill = db.get('personlSkill');
@@ -146,14 +146,20 @@ router.post('/login', function (req, res) {
   });
 });
 
-// after authentication getting form pages
-// router.get('/forms', function (req, res, next) {
-//   if (req.session && req.session.usable) {
-//     res.locals.usable = req.session.usable;
-//     res.redirect('/forms');
-//   } else {
-//     req.session.reset();
-//     res.redirect('/');
-//   }
-// });
+router.get('/proceed', function (req, res) {
+  if (req.session && req.session.usable) {
+    res.locals.usable = req.session.usable;
+    perdet.find({ lastname: req.session.usable.Username }, function (
+      err,
+      docs
+    ) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(docs);
+        res.render('output', { project: docs });
+      }
+    });
+  }
+});
 module.exports = router;
