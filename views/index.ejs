@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>academic-details</title>
+    <title>Forms</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -52,12 +52,33 @@
             <ul class="nav nav-tabs">
                 <li><a href=" #" data-toggle="tab" style="font-size:x-large;font-weight: bold;color: black;">Easy
                         Prep</a></li>
-                <li class="active"><a href="#Ourteam" data-toggle="tab">About Me</a></li>
-                <li><a href="#OurObjective" data-toggle="tab">Academic details</a></li>
-                <li><a href="#Squad" data-toggle="tab">Tech skills</a></li>
-                <li><a href="#master" data-toggle="tab">Personal Skills</a></li>
-                <li><a href="#preview" data-toggle="tab">Preview</a></li>
-                <li><a href="#output" data-toggle="tab">Result</a></li>
+                <li class="active"><a href="#Ourteam" data-toggle="tab">
+                        <h4>About Me</h4>
+                    </a></li>
+                <li><a href="#OurObjective" data-toggle="tab">
+                        <h4>Academic details</h4>
+                    </a></li>
+                <li><a href="#Squad" data-toggle="tab">
+                        <h4>Tech skills</h4>
+                    </a></li>
+                <li><a href="#master" data-toggle="tab">
+                        <h4>Personal Skills</h4>
+                    </a></li>
+                <li><a href="#preview" data-toggle="tab">
+                        <h4>Preview</h4>
+                    </a></li>
+                <li><a href="#output" data-toggle="tab">
+                        <h4>Result</h4>
+                    </a></li>
+                <li style="float: right;">
+                    <h2 data-toggle="tab">Welcome! <%= profile.Username %><span class="glyphicon glyphicon-user"></span>
+                    </h2>
+                </li>
+                <li style="float: right;"><a href="/logout">
+                        <h4>logout</h4>
+                    </a>
+
+                    </a></li>
             </ul>
         </div>
     </div>
@@ -690,6 +711,8 @@
                 <h1>PreView</h1>
             </center>
 
+            <button ng-click="get()">Get my data</button>
+
 
             <div>
                 <table class="table">
@@ -839,7 +862,7 @@
                             </button>
                         </td>
                         <td>
-                            <button class="Bconfirm" value={{member.lastname}}>confirm!</button>
+                            <button><a href="/proceed">proceed</a></button>
                         </td>
                     </tr>
                 </table>
@@ -847,55 +870,55 @@
 
             <div>
 
-                <table class="table backend">
+                <table class="table">
 
-                    <tr ng-repeat="member in Aqoute">
+                    <tr ng-repeat="member in Cstore">
                         <td ng-hide="userhide">{{ $index + 1 | number }}</td>
                         <div class="col-sm-3 col-md-1 col-xs-2">
                             <td>
-                                <p ng-hide="userhide">{{ member.firstName[0] }}</p>
+                                <p ng-hide="userhide">{{ member.cplus}}</p>
                                 <input type="text" ng-show="userhide" ng-model="member.firstName" />
                             </td>
                         </div>
 
                         <div class="col-sm-3 col-md-1 col-xs-2">
                             <td>
-                                <p ng-hide="userhide">{{ member.lastname }}</p>
+                                <p ng-hide="userhide">{{ member.c }}</p>
                                 <input type="text" ng-show="userhide" ng-model="member.lastname" />
                             </td>
                         </div>
 
                         <div class="col-sm-3 col-md-1 col-xs-2">
                             <td>
-                                <p ng-hide="userhide">{{ member.email }}</p>
+                                <p ng-hide="userhide">{{ member.java }}</p>
                                 <input type="text" ng-show="userhide" ng-model="member.email" />
                             </td>
                         </div>
 
                         <div class="col-sm-3 col-md-1 col-xs-2">
                             <td>
-                                <p ng-hide="userhide">{{ member.phonenumber }}</p>
+                                <p ng-hide="userhide">{{ member.python }}</p>
                                 <input type="text" ng-show="userhide" ng-model="member.phonenumber" />
                             </td>
                         </div>
 
                         <div class="col-sm-3 col-md-1 col-xs-2">
                             <td>
-                                <p ng-hide="userhide">{{ member.cityname }}</p>
+                                <p ng-hide="userhide">{{ member.csha }}</p>
                                 <input type="text" ng-show="userhide" ng-model="member.cityname" />
                             </td>
                         </div>
 
                         <div class="col-sm-3 col-md-1 col-xs-2">
                             <td>
-                                <p ng-hide="userhide">{{ member.Gender }}</p>
+                                <p ng-hide="userhide">{{ member.rpro }}</p>
                                 <input type="text" ng-show="userhide" ng-model="member.Gender" />
                             </td>
                         </div>
 
                         <div class="col-sm-3 col-md-1 col-xs-2">
                             <td>
-                                <p ng-hide="userhide">{{ member.state }}</p>
+                                <p ng-hide="userhide">{{ member.mean }}</p>
                                 <input type="text" ng-show="userhide" ng-model="member.state" />
                             </td>
                         </div>
@@ -924,21 +947,10 @@
         </section>
 
         <div id="output" class="tab-pane fade ">
-            <center>
-                <h1>RESUME</h1>
-            </center>
-            <div class=" container col-sm-6 col-sm-offset-4">
-
-                <center>
-                    <legend>
-                        <h2>MY RESUME</h2>
-                    </legend>
-                </center>
-
-
-            </div>
 
         </div>
+
+    </div>
     </div>
 
     </div>
