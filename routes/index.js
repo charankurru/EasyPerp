@@ -1,16 +1,85 @@
 var express = require('express');
 var router = express.Router();
 var monk = require('monk');
-var db = monk(
-  process.env.MONGODB_URL ||
-    'mongodb+srv://charan:bharathi@cluster0-2hbtz.mongodb.net/easyPrep?retryWrites=true&w=majority'
-);
+var db = monk('localhost:27017/easyPrep');
+// var db = monk(
+//   process.env.MONGODB_URL ||
+//     'mongodb+srv://charan:bharathi@cluster0-2hbtz.mongodb.net/easyPrep?retryWrites=true&w=majority'
+// );
 var perdet = db.get('personalDetails');
 var acadet = db.get('AcademicDetails');
 var perskill = db.get('personlSkill');
 var techdet = db.get('techicalSkills');
 var session = db.get('login&sign');
 
+var passport = require('passport');
+var GoogleStrategy = require('passport-google-oauth20').Strategy;
+
+router.get(
+  '/google',
+  passport.authenticate('google', {
+    scope: ['profile'],
+  })
+);
+
+// callback route for google to redirect to
+// hand control to passport to use code to grab profile info
+router.get('/auth/google/redirect', passport.authenticate('google'), function (
+  req,
+  res
+) {
+  console.log(req.user);
+  //res.send(req.user);
+  //res.red('/');
+});
+
+passport.serializeUser(function (user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function (id, done) {
+  session.findById(id).then((user) => {
+    done(null, user);
+  });
+});
+
+passport.use(
+  new GoogleStrategy(
+    {
+      // options for google strategy
+      clientID:
+        '634939131360-3gt9tmteblbkdbpes15pb6ba3s6he9ai.apps.googleusercontent.com',
+      clientSecret: 'zmjBfvEiqvU8SlCxjfl56pVM',
+      callbackURL: '/auth/google/redirect',
+    },
+    function (accessToken, refreshToken, profile, done) {
+      // check if user already exists in our own db
+      // session.findOne({ _id: profile.id },function(err,docs) {
+      //   if (docs) {
+      //     // already have this user
+      //     console.log('user is: ', docs);
+      //     done(null, docs);
+      //   } else {
+      // if not, create user in our db
+      // new User({
+      //   googleId: profile.id,
+      //   username: profile.displayName,
+      // })
+      session.insert(profile.displayName, profile.id, function (err, docs) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log('created new user: ', newUser);
+          done(null, newUser);
+        }
+      });
+    }
+    //     });
+    //   }
+  )
+);
+
+//_______________________________________________________________________________________________________________________________
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('home', { title: 'Express' });
